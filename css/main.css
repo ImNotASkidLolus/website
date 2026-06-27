@@ -1,0 +1,108 @@
+body {
+    overflow: hidden;
+    background-image: url(../images/space-shuttle.png);
+    background-size: cover;
+    display: flex;
+    justify-content: center; /* Horizontally centers */
+    align-items: center;     /* Vertically centers */
+    height: 100vh; 
+    flex-direction: column;
+    font-family: 'Satoshi', sans-serif;
+}
+@keyframes continuousSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.main {
+    width: 30%;
+    text-align: center;
+    align-items: flex-end;
+    align-content: center;
+    flex:1;
+    max-width: 500px;
+    min-width: 200px;
+}
+.container {
+    text-align: center;
+    align-items: flex-end;
+    align-content: center;
+    width: 100%;
+    background-color: rgba(243, 243, 197, 0.5);
+    padding: 5px;
+    border-radius: 15px;
+}
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-image: url(../images/pfp.jpg);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.6);
+    animation: continuousSpin 40s linear infinite;
+}
+.profile-picture:hover {
+    animation: continuousSpin 5s linear infinite;
+}
+.profile-picture-box {
+    border-radius: 10px;
+    background-color: rgba(243, 243, 197, 0.2);
+    float:left;
+    padding:20px;
+}
+.socials {
+    width: 100px;
+    height: 100px;
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.socials:hover {
+    scale: 1.1;
+}
+.socials:active {
+    scale: 0.9;
+}
+.github {
+    background-image: url(../images/github-logo.png);
+}
+.linkedin {
+    margin-top: 20px;
+    background-image: url(../images/linkedin-logo.webp);
+}
+.socials-box {
+    padding: 20px;
+}
+.main-footer {
+    width: 100%;
+    padding: 5px 0;
+    background-color: rgba(26, 26, 26, 0.8); /* Added a slight opacity so you can still see the background image details below it */
+    backdrop-filter: blur(5px); /* Optional: gorgeous glassmorphism effect */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    color: #8c8c8c;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Keeps links clean */
+.footer-links a {
+    color: #ff79c6; /* Or whatever your accent color is */
+    text-decoration: none;
+}

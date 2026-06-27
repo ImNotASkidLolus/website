@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/main.css?v=4" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@1,2&display=swap" rel="stylesheet">
+    <title id="title-text">Check me out!</title>
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="profile-picture-box">
+                <button class="profile-picture"></button>
+                <strong>
+                <h1>Igor Niedbala</h1>
+                <p>17 y.o</p>
+                <p>I am a <span id="typed-text"></span></p>
+                </strong>
+            </div>
+            <div class="socials-box">
+                <form action="https://github.com/ImNotASkidLolus">
+                    <button class="socials github"></button>
+                </form>
+                <form action="https://igorniedbala.site">
+                    <button class="socials linkedin"></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Igor Niedbala. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="mailto:your-email@example.com">Contact</a>
+                <span class="divider">|</span>
+                <a href="https://github.com/ImNotASkidLolus" target="_blank">Source Code</a>
+            </div>
+        </div>
+</footer>    
+</body>
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script>
+    const typed = new Typed('#typed-text', {
+    strings: ['developer.', 'security researcher.', 'tech enthusiast.'],
+    typeSpeed: 50,    // Speed in milliseconds
+    backSpeed: 30,    // Backspacing speed
+    loop: true        // Loop the animation infinitely
+    });
+</script>
+<script>
+  let originalTitle = document.title;
+  let scrollInterval = null;
+  let movingText = "======Already leaving me?======";
+
+  // When the user switches tabs
+  window.addEventListener('blur', () => {
+    scrollInterval = setInterval(() => {
+      movingText = movingText.substring(1) + movingText.substring(0, 1);
+      document.title = movingText;
+    }, 250);
+  });
+
+  // When the user clicks back onto your tab
+  window.addEventListener('focus', () => {
+    clearInterval(scrollInterval);
+    document.title = originalTitle; // Reset to the normal title immediately
+  });
+</script>
+</html>
